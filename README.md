@@ -24,7 +24,7 @@ Prérequis : Node.js 18 ou plus récent, aucune dépendance npm. Le serveur n'a 
 
 En attendant le choix de la cliente, la préversion contient **4 ambiances × 3 organisations**. Un panneau « Propositions de design » (en bas à droite, créé par `src/js/propositions.js`) permet de passer de l'une à l'autre. Le lien « Copier le lien de cette combinaison » partage une combinaison précise.
 
-- **Ambiances** (couleurs, polices, formes), toutes dans `src/css/style.css` : `:root` = Argile (Fraunces & Manrope), `[data-ambiance='lilas']` (Bricolage Grotesque), `[data-ambiance='sous-bois']` (Instrument Serif & Instrument Sans, version sombre), `[data-ambiance='manifeste']` (Archivo). L'ambiance est mémorisée dans le navigateur et transmise par `?ambiance=…`.
+- **Ambiances** (couleurs, polices, formes), toutes dans `src/css/style.css` : `:root` = Argile (Fraunces & Manrope), `[data-ambiance='lilas']` (Bricolage Grotesque), `[data-ambiance='sous-bois']` (Instrument Serif & Instrument Sans, version sombre), `[data-ambiance='clairiere']` (mêmes polices et même mise en page que Sous-bois, vert menthe `#87E990` dominant ; les règles communes aux deux sont écrites `:is([data-ambiance='sous-bois'], [data-ambiance='clairiere'])`). L'ambiance est mémorisée dans le navigateur et transmise par `?ambiance=…`.
 - **Organisations** : `src/pages/` (4 pages, comme le site actuel, mêmes adresses), `src/pages/trois-pages/` (les cours sur l'accueil), `src/pages/page-unique/`. En changeant d'organisation, le panneau conduit à la même section dans l'autre version.
 
 **Une fois le choix fait** :

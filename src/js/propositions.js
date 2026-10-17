@@ -3,7 +3,7 @@
     { id: 'argile', nom: 'Argile', detail: 'Terre cuite, crème et olive · Fraunces', couleurs: ['#f6efe6', '#b5532b', '#6c7147'] },
     { id: 'lilas', nom: 'Lilas', detail: 'Lavande, prune et pêche · Bricolage Grotesque', couleurs: ['#f7f3fb', '#7a4bb0', '#f3a88c'] },
     { id: 'sous-bois', nom: 'Sous-bois', detail: 'Version sombre, vert forêt et ambre · Instrument Serif', couleurs: ['#121e18', '#e3a74f', '#ebe2cd'] },
-    { id: 'manifeste', nom: 'Manifeste', detail: 'Papier, encre et vermillon · Archivo', couleurs: ['#f3f0e9', '#151515', '#e2442f'] }
+    { id: 'clairiere', nom: 'Clairière', detail: 'Version sombre, vert profond et menthe · Instrument Serif', couleurs: ['#0e1813', '#87e990', '#e8f3ea'] }
   ];
 
   var sectionsCompletes = ['accueil', 'approche', 'cours', 'vinyasa', 'yin', 'performance', 'temoignages', 'a-savoir'];

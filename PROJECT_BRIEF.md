@@ -62,7 +62,7 @@ Fil conducteur commun : « Aurore » = l'aube. Un motif de soleil levant revient
 | **Argile** | crème, terre cuite, olive | Fraunces (titres), Manrope | photo en arche, soleil à anneaux, italiques éditoriales |
 | **Lilas** | lavande, prune, pêche | Bricolage Grotesque | formes organiques, halo d'aurore flou, surlignage pêche |
 | **Sous-bois** | vert forêt (sombre), ambre, parchemin | Instrument Serif, Instrument Sans | photo pleine page, lueur ambrée, élégance éditoriale |
-| **Manifeste** | papier, encre, vermillon, rose | Archivo (capitales élargies) | graphique et engagé : disque vermillon, cadres noirs, ombres décalées |
+| **Clairière** | vert très sombre, menthe `#87E990` dominante | Instrument Serif, Instrument Sans | variante de Sous-bois demandée le 17/10/2026 à la place de Manifeste (que la cliente n'aurait pas aimé) : bandeau défilant et témoignages sur fond menthe, lueur menthe, coins plus arrondis |
 
 | Organisation | Pages |
 |---|---|

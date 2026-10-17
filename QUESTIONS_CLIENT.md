@@ -20,7 +20,7 @@
 
 ## Contenu et médias
 
-- [ ] Petites coquilles dans les textes validés, laissées telles quelles : à corriger ? Dans les descriptions pour Google, « a Lyon dans les pentes de la croix-rousse » ; sur la page contact, « Metro » et « 1 rue aimé Boussange ». Dans les témoignages, « systèmatiquement », « Une des meilleurs profs », « vous accordez », « m'avait attiré », « me procurait », « de qualités ». Ce sont des citations : à corriger seulement avec l'accord de leurs autrices.
+- [x] Coquilles corrigées le 17/10/2026, avec l'accord de Stéphane, y compris dans les témoignages (orthographe et accords seulement, sans réécriture) : « systématiquement », « permettent », « et de se reconnecter », « meilleures profs », « vous accorder », « attirée », « c'étaient », « me procuraient », « bien-être », « lâcher-prise », « de qualité ». Ailleurs : « Métro », « Croix-Paquet », « rue Aimé Boussange », la description Google de la page Les cours, et les apostrophes typographiques. À signaler aux autrices des témoignages si besoin.
 - [ ] Logo : la nouvelle identité en prévoit un nouveau. Aurore tient-elle à garder la fleur violette du favicon ?
 - [ ] Photos supplémentaires (lieu, ambiance des cours, portrait d'Aurore) ? Seules deux photos sont en ligne, aucune sur l'accueil
 - [ ] Réseaux sociaux (Instagram…) à afficher ?

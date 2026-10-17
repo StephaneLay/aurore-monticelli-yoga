@@ -32,7 +32,7 @@
   width: 1.1em;
   height: 1.1em;
   border-radius: 50%;
-  background: conic-gradient(#b5532b 0 25%, #7a4bb0 0 50%, #e3a74f 0 75%, #e2442f 0);
+  background: conic-gradient(#b5532b 0 25%, #7a4bb0 0 50%, #e3a74f 0 75%, #87e990 0);
 }
 .propositions-ouvreur[hidden] { display: none; }
 
