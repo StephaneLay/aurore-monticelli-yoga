@@ -336,22 +336,10 @@ h3 { font-size: 1.35rem; line-height: 1.2; }
   margin: 0;
   padding: 0;
   list-style: none;
-  counter-reset: point;
 }
 .approche__point {
-  counter-increment: point;
   padding-top: 1.5rem;
   border-top: 1px solid var(--filet-fort);
-}
-.approche__point::before {
-  content: counter(point, decimal-leading-zero);
-  display: block;
-  margin-bottom: .9rem;
-  color: var(--accent);
-  font-family: var(--police-titre);
-  font-size: 2.6rem;
-  font-weight: 380;
-  line-height: 1;
 }
 .approche__point p { margin: 0; color: var(--texte-doux); font-size: 1.06rem; }
 
