@@ -1,6 +1,7 @@
 {
   "name": "Aurore Monticelli Yoga",
-  "siteUrl": "",
+  "siteUrl": "https://www.auroremonticelliyoga.com",
+  "image": "images/partage.jpg",
   "defaultLanguage": "fr",
   "languages": [
     "fr"

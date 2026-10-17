@@ -115,11 +115,22 @@
   });
 
   document.querySelectorAll('[data-formulaire]').forEach(function (formulaire) {
-    formulaire.addEventListener('submit', function (evenement) {
-      if (formulaire.getAttribute('action')) return;
-      evenement.preventDefault();
-      var statut = formulaire.querySelector('[data-formulaire-statut]');
-      if (statut) statut.textContent = formulaire.getAttribute('data-apercu');
+    var statut = formulaire.querySelector('[data-formulaire-statut]');
+    var envoi = new URLSearchParams(window.location.search).get('envoi');
+    if (statut && (envoi === 'ok' || envoi === 'erreur')) {
+      statut.textContent = formulaire.getAttribute(envoi === 'ok' ? 'data-envoi-ok' : 'data-envoi-erreur');
+      statut.classList.toggle('formulaire__statut--erreur', envoi === 'erreur');
+    }
+
+    formulaire.addEventListener('submit', function () {
+      var bouton = formulaire.querySelector('[type="submit"]');
+      if (bouton) bouton.disabled = true;
+    });
+  });
+
+  window.addEventListener('pageshow', function () {
+    document.querySelectorAll('[data-formulaire] [type="submit"]').forEach(function (bouton) {
+      bouton.disabled = false;
     });
   });
 

@@ -34,6 +34,7 @@
   --texte-doux: #6c5a4e;
   --accent: #b5532b;
   --accent-survol: #964221;
+  --olive: #6c7147;
   --texte-sur-accent: #fff7ef;
   --filet: rgba(47, 33, 25, .14);
   --filet-fort: rgba(47, 33, 25, .28);
@@ -725,7 +726,20 @@ h3 { font-size: 1.35rem; line-height: 1.2; }
 }
 .champ--piege { position: absolute; left: -9999px; }
 .formulaire .bouton { justify-self: start; }
-.formulaire__statut { margin: 0; color: var(--accent); font-weight: 700; }
+.formulaire__statut {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--olive);
+  border-radius: var(--rayon-petit);
+  background: color-mix(in srgb, var(--olive) 12%, var(--carte));
+  font-weight: 700;
+}
+.formulaire__statut--erreur {
+  border-left-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--carte));
+  color: var(--accent-survol);
+}
+.formulaire .bouton:disabled { opacity: .6; cursor: progress; transform: none; }
 .formulaire__statut:empty { display: none; }
 
 .contact__infos {

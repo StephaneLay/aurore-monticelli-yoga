@@ -2,7 +2,8 @@
   <div class="conteneur contact__grille">
     <div class="contact__formulaire" data-reveal>
       <h1 class="contact__titre">{{t:contact.titre}}</h1>
-      <form class="formulaire" data-formulaire data-apercu="{{t:contact.apercu}}">
+      <form class="formulaire" id="formulaire" action="scripts/contact.php" method="post" data-formulaire data-envoi-ok="{{t:contact.envoiOk}}" data-envoi-erreur="{{t:contact.envoiErreur}}">
+        <p class="formulaire__statut" role="status" data-formulaire-statut></p>
         <div class="formulaire__ligne">
           <div class="champ">
             <label for="nom">{{t:contact.nom}}</label>
@@ -26,7 +27,6 @@
           <input id="site_web" name="site_web" type="text" tabindex="-1" autocomplete="off">
         </div>
         <button class="bouton" type="submit">{{t:contact.envoyer}}</button>
-        <p class="formulaire__statut" role="status" data-formulaire-statut></p>
       </form>
     </div>
     <div class="contact__infos" data-reveal>

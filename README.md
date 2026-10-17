@@ -60,7 +60,9 @@ Les prix se modifient à **un seul endroit** : `tarifs` dans `src/data/site.json
 - `src/images/` : photos en WebP (800, 1400 et 2200 px, redimensionnées depuis les originaux du site actuel), image de partage `partage.jpg` (1200 × 630), favicons
 - `src/fonts/` : polices auto-hébergées en woff2 variable, jeu latin (pas d'appel à Google Fonts, pour le RGPD et la vitesse)
 - `src/data/site.json` : nom, URL publique, langues, tarifs
+- `src/scripts/` : script PHP du formulaire (`contact.php`) et sa protection (`.htaccess`)
 - `src/racine/` : fichiers copiés à la racine (`.htaccess`…)
+- `hebergement/` : modèle de configuration du formulaire, à copier sur le serveur hors de `public_html` (le vrai fichier est ignoré par git)
 - `legacy/` : sauvegarde et extraction du site actuel. **Ignoré par git.**
 - `maquette/` : maquettes et captures de référence. **Ignoré par git.**
 
@@ -73,26 +75,52 @@ Les prix se modifient à **un seul endroit** : `tarifs` dans `src/data/site.json
 - **Témoignages** : cartes côte à côte qui défilent de gauche à droite (glisser au doigt, pavé tactile, flèches du clavier une fois la zone sélectionnée, ou boutons ← →, qui se désactivent en début et en fin de liste). Les textes de plus de 9 lignes sont repliés, avec un bouton « Lire la suite » / « Réduire ». Ajouter un avis : une paire `tN.texte` / `tN.nom` dans `fr.json` et un bloc `<figure>` dans `sections/temoignages.html`.
 - **Instagram** : lien dans l'en-tête (icône, compte affiché dans le menu mobile), le pied de page et la page Contact. L'adresse est à un seul endroit : `instagram.url` dans `fr.json`.
 - **Tarifs** : le choix de la tranche de revenu affiche les prix correspondants, en CSS seul (boutons radio et `:has()`)
-- **Formulaire de contact** : validation du navigateur, champ anti-spam invisible (`site_web`). Tant que la balise `<form>` n'a pas d'attribut `action`, l'envoi affiche un message d'aperçu.
+- **Formulaire de contact** : validation du navigateur, champ anti-spam invisible (`site_web`), bouton désactivé pendant l'envoi. Le formulaire poste vers `scripts/contact.php`, qui renvoie sur `contact.html?envoi=ok` ou `?envoi=erreur` (message affiché en haut du formulaire). Le PHP ne tourne pas sur GitHub Pages : sur la préversion, l'envoi échoue, c'est normal.
 - **Carte** : OpenStreetMap intégrée (aucun cookie de suivi)
 - **Année** : `<span data-annee>` est mis à jour automatiquement
 
 ## Mise en ligne
 
 - **Préversion** : le workflow `.github/workflows/deploy-pages.yml` construit le site à chaque push sur `main` et le publie sur GitHub Pages (`https://stephanelay.github.io/aurore-monticelli-yoga/`), avec un `robots.txt` qui interdit l'indexation. Si le premier déploiement échoue sur l'étape `configure-pages`, activer Pages à la main : *Settings → Pages → Source : GitHub Actions*.
-- **Hébergement définitif** : offre Hostinger *Single Web Hosting* du client (un seul site, PHP, gestionnaire de fichiers, FTP), sur le domaine `auroremonticelliyoga.com`. Avant la mise en ligne, renseigner `siteUrl` dans `src/data/site.json`. Cela active canonical, `og:url` et `sitemap.xml`. On publie ensuite **le contenu de `dist/`** dans `public_html`.
-- `.htaccess` (Apache/LiteSpeed) : page 404, en-têtes de sécurité, redirection HTTPS. Pour conserver le référencement, les adresses du site actuel continuent de fonctionner : `/infos` et `/contact` servent `infos.html` et `contact.html`, et l'ancienne page `/les-cours` redirige (301) vers `/#cours`. Ces règles ne s'appliquent pas sur GitHub Pages : elles seront à tester après la bascule.
+- **Production** : `https://www.auroremonticelliyoga.com`, sur l'offre Hostinger *Single Web Hosting* du client (un seul site, PHP, gestionnaire de fichiers). `siteUrl` est renseigné dans `src/data/site.json` : canonical, `og:url`, `og:image` et `sitemap.xml` sont générés.
+- **`.htaccess`** (LiteSpeed) :
+  - page 404, en-têtes de sécurité ;
+  - mise en cache longue des fichiers à empreinte (CSS, JS, polices) ;
+  - une seule redirection 301 vers `https://www.` ;
+  - les adresses du site Builder redirigent (301) vers les nouvelles : `/infos` → `/infos.html`, `/contact` → `/contact.html`, `/les-cours` → `/#cours`.
+
+  Ces règles ne s'appliquent pas sur GitHub Pages.
+- **Formulaire** : `scripts/contact.php` lit sa configuration dans `config-formulaire.php`, **hors de `public_html`**, dans le dossier parent `domains/auroremonticelliyoga.com/`. Il cherche ensuite dans `public_html/scripts/`, où le fichier est protégé par `scripts/.htaccess`. Le modèle est `hebergement/config-formulaire.exemple.php`. Avec un mot de passe SMTP, l'envoi passe par `smtp.hostinger.com:465` depuis la boîte du domaine (meilleure délivrabilité chez Outlook). Sans mot de passe, l'envoi passe par la fonction `mail()` de PHP. **Le vrai fichier de configuration ne va jamais dans git** (il est ignoré).
+- **Archive à envoyer** : `node build.js`, puis `python3 -c "import shutil; shutil.make_archive('site', 'zip', 'dist')"`. Cela produit `site.zip`, avec le contenu de `dist/` à la racine et les `.htaccess` compris (fichier ignoré par git).
 
 ### Bascule depuis le site Builder (à faire ensemble, jamais en autonomie)
 
-L'offre Single n'accepte qu'un site, déjà occupé par le site Builder : il faut le **supprimer** (opération irréversible) avant de créer le nouveau. La coupure dure le temps des étapes 3 à 5.
+L'offre Single n'accepte qu'un site, déjà occupé par le site Builder : il faut le **supprimer** (opération irréversible) avant de créer le nouveau. La coupure dure le temps des étapes 3 à 7, soit environ un quart d'heure : la durée de cache DNS n'est que de 60 s (300 s pour `www`).
 
-1. Avant le jour J : le nouveau site est validé sur la préversion, `siteUrl` est renseigné, `dist/` est prêt (en `.zip` pour l'envoi).
-2. Le jour J : refaire une sauvegarde du site Builder dans `legacy/` et récupérer les messages du formulaire stockés dans le Builder.
-3. hPanel → Sites web → site Builder → supprimer le site. Hostinger prévient que cela supprime aussi les e-mails du domaine : il n'y en a aucun.
-4. Créer un site → « PHP/HTML vide » sur `auroremonticelliyoga.com`.
-   Activer la boîte e-mail gratuite du domaine, utilisée par le script du formulaire pour l'envoi SMTP. Ne pas toucher aux enregistrements MX.
-5. Gestionnaire de fichiers → `public_html` : envoyer le `.zip` de `dist/`, l'extraire, vérifier que `.htaccess` est bien présent.
-6. Vérifier le certificat SSL (avec et sans `www`), les pages et anciennes adresses, la page 404 et le formulaire en conditions réelles. Vérifier aussi que la zone DNS a gardé MX et SPF.
+**Avant le jour J**
+
+1. hPanel → E-mails : vérifier qu'une boîte gratuite est proposée pour le domaine, **sans la créer** (la suppression du site Builder supprimerait aussi les e-mails du domaine).
+2. Si Aurore veut garder les messages déjà reçus par le formulaire du Builder, les récupérer dans l'éditeur du Builder.
+3. Choisir un créneau calme, en dehors des soirs de cours (lundi, mardi, mercredi).
+
+**Le jour J**
+
+1. Préparer `site.zip` (voir ci-dessus) et refaire une sauvegarde du site Builder dans `legacy/`.
+2. hPanel → Sites web → site Builder → supprimer le site. Ne toucher ni à l'abonnement du domaine, ni à celui de l'hébergement.
+3. Sites web → créer / ajouter un site → site vide « PHP/HTML personnalisé », sur le domaine existant `auroremonticelliyoga.com`.
+4. Vérifier la zone DNS (hPanel → Domaines → DNS) : la racine et `www` pointent vers l'hébergement, MX et SPF sont intacts. Ne rien modifier à la main.
+5. hPanel → E-mails : créer `site@auroremonticelliyoga.com`, avec un mot de passe fort conservé dans un gestionnaire de mots de passe.
+6. Gestionnaire de fichiers → `public_html` : supprimer la page par défaut d'Hostinger, envoyer `site.zip`, l'extraire sur place, supprimer `site.zip`, vérifier que `.htaccess` est présent (afficher les fichiers cachés).
+7. Dans le dossier parent de `public_html` : créer `config-formulaire.php` à partir du modèle et y saisir le mot de passe de la boîte.
+8. hPanel → Sécurité → SSL : certificat actif (attendre s'il est en cours d'émission). En cas de boucle de redirection, retirer le premier bloc de redirection du `.htaccess` et activer « Forcer HTTPS » dans le hPanel.
+9. Vérifications :
+   - pages, images et favicon ;
+   - redirections : `http://`, sans `www`, `/infos`, `/contact`, `/les-cours` ;
+   - page 404, `robots.txt`, `sitemap.xml` ;
+   - MX inchangés ;
+   - envoi réel du formulaire : réception sur `aurore.monticelli@live.fr`, spams compris, et « Répondre » qui vise bien le visiteur.
+10. Search Console, si Aurore l'utilise : soumettre `sitemap.xml`.
+
+**Mises à jour ensuite** : rebâtir, refaire `site.zip`, l'envoyer et l'extraire par-dessus dans `public_html`. `config-formulaire.php` n'est pas touché, puisqu'il est hors de `public_html`. L'extraction écrase les fichiers sans supprimer les anciens : un fichier retiré du site doit être supprimé à la main sur le serveur.
 
 Le code source ne contient volontairement aucun commentaire : le suivi du projet se fait dans ce fichier, `PROJECT_BRIEF.md` et `QUESTIONS_CLIENT.md`.

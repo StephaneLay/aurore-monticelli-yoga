@@ -21,7 +21,7 @@ function copyDirectory(source, destination) {
 
 function loadSiteConfig() {
   const configPath = path.join(SRC, 'data', 'site.json');
-  const defaults = { name: 'Aurore Monticelli Yoga', siteUrl: '', defaultLanguage: 'fr', languages: ['fr'], tarifs: {} };
+  const defaults = { name: 'Aurore Monticelli Yoga', siteUrl: '', image: '', defaultLanguage: 'fr', languages: ['fr'], tarifs: {} };
   if (!fs.existsSync(configPath)) return defaults;
 
   let config;
@@ -43,6 +43,10 @@ function loadSiteConfig() {
     if (!/^[a-z0-9-]+$/.test(cle) || typeof prix !== 'number' || prix <= 0) {
       throw new Error('tarifs doit associer un nom (minuscules, chiffres, tirets) à un prix, par exemple { "cours-collectif": 15 }.');
     }
+  }
+
+  if (config.image && !fs.existsSync(path.join(SRC, config.image))) {
+    throw new Error(`Image de partage introuvable : src/${config.image}.`);
   }
 
   if (config.siteUrl) {
@@ -169,6 +173,7 @@ function headLinks(config, language, name) {
     `<link rel="canonical" href="${publicUrl(config, outputPath(language, config, name))}">`,
     `<meta property="og:url" content="${publicUrl(config, outputPath(language, config, name))}">`,
   ];
+  if (config.image) lines.push(`<meta property="og:image" content="${config.siteUrl}/${config.image}">`);
   if (config.languages.length > 1) {
     for (const alternate of config.languages) {
       lines.push(`<link rel="alternate" hreflang="${alternate}" href="${publicUrl(config, outputPath(alternate, config, name))}">`);

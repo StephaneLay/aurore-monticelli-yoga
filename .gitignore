@@ -14,3 +14,7 @@ maquette/
 
 # Métadonnées Windows/WSL (fichiers créés lors de copies depuis Windows)
 *Zone.Identifier
+
+# Configuration réelle du formulaire (mot de passe) et archive de déploiement
+hebergement/config-formulaire.php
+site.zip
