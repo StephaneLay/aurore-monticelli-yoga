@@ -57,7 +57,7 @@ Décisions du 17/10/2026 :
 
 La cliente a vu 4 ambiances (Argile, Lilas, Sous-bois, Clairière ; Manifeste avait été écartée d'avance) et 3 organisations (4 pages, 3 pages, page unique). Elle a retenu **Argile en 3 pages**, avec ces retouches :
 
-- favicon : une petite lune bien visible (croissant blanc sur fond noir) ;
+- favicon : une petite lune bien visible, aux couleurs du site (croissant crème sur disque terre cuite) ;
 - plus de bandeau défilant ;
 - témoignages côte à côte, qu'on fait défiler de gauche à droite ;
 - lien vers Instagram : https://www.instagram.com/aurore.monticelli.yoga

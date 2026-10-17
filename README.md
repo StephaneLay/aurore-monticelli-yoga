@@ -31,7 +31,7 @@ Choix de la cliente le 17/10/2026, parmi 4 ambiances et 3 organisations : ambian
   - `index.html` : accroche, approche, cours (ancre `#cours`), pratique sans performance, témoignages, « À savoir » ;
   - `infos.html` : tarifs, cours d'essai, questions ;
   - `contact.html` : formulaire, accès, Instagram, carte.
-- **Favicon** : un croissant de lune blanc sur un disque noir. `src/images/favicon.svg` est la source. `favicon.png` (256 px, transparent autour du disque) et `apple-touch-icon.png` (180 px, fond noir) en sont des exports PNG : il faut les régénérer si le SVG change.
+- **Favicon** : un croissant de lune crème (`#f6efe6`) sur un disque terre cuite (`#b5532b`). `src/images/favicon.svg` est la source. `favicon.png` (256 px, transparent autour du disque) et `apple-touch-icon.png` (180 px, fond terre cuite) en sont des exports PNG : il faut les régénérer si le SVG change.
 
 ## Textes, fragments et langues
 

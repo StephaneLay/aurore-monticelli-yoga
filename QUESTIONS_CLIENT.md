@@ -21,7 +21,7 @@
 ## Contenu et médias
 
 - [x] Coquilles corrigées le 17/10/2026, avec l'accord de Stéphane, y compris dans les témoignages (orthographe et accords seulement, sans réécriture) : « systématiquement », « permettent », « et de se reconnecter », « meilleures profs », « vous accorder », « attirée », « c'étaient », « me procuraient », « bien-être », « lâcher-prise », « de qualité ». Ailleurs : « Métro », « Croix-Paquet », « rue Aimé Boussange », la description Google de la page Les cours, et les apostrophes typographiques. À signaler aux autrices des témoignages si besoin.
-- [x] Favicon : un croissant de lune blanc sur fond noir, à la place de la fleur violette
+- [x] Favicon : un croissant de lune crème sur disque terre cuite, aux couleurs du site, à la place de la fleur violette
 - [ ] Photos supplémentaires (lieu, ambiance des cours, portrait d'Aurore) ? Seules deux photos sont en ligne, aucune sur l'accueil
 - [x] Instagram : https://www.instagram.com/aurore.monticelli.yoga (en-tête, pied de page, page Contact). D'autres réseaux ?
 - [ ] **Mentions légales** : absentes du site actuel, obligatoires (nom, statut, SIRET, adresse, hébergeur). Politique de confidentialité nécessaire avec le formulaire.
