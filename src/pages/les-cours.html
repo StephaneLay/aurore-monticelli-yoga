@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{LANG}}">
+<head>
+  {{INCLUDE:tete}}
+  <title>{{t:meta.cours.title}}</title>
+  <meta name="description" content="{{t:meta.cours.description}}">
+  <meta property="og:title" content="{{t:meta.cours.title}}">
+  <meta property="og:description" content="{{t:meta.cours.description}}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  {{HEAD_LINKS}}
+</head>
+<body data-organisation="quatre-pages">
+{{INCLUDE:entete accueil="index.html" cours="les-cours.html" infos="infos.html" contact="contact.html"}}
+<main id="contenu">
+{{INCLUDE:bandeau-page id="intro-cours" titre="nav.cours"}}
+{{INCLUDE:sections/approche}}
+{{INCLUDE:sections/cours contact="contact.html"}}
+{{INCLUDE:sections/performance}}
+{{INCLUDE:sections/temoignages}}
+{{INCLUDE:sections/a-savoir}}
+</main>
+{{INCLUDE:pied contact="contact.html"}}
+</body>
+</html>

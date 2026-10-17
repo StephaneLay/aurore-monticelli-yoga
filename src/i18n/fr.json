@@ -1,29 +1,171 @@
 {
   "site": {
-    "nom": "Aurore Monticelli Yoga"
+    "nom": "Aurore Monticelli",
+    "discipline": "yoga"
   },
   "meta": {
-    "title": "Aurore Monticelli — Yoga",
-    "description": "Site en cours de refonte.",
-    "ogLocale": "fr_FR"
+    "accueil": {
+      "title": "Yoga Vinyasa et Yin Yoga | Bienveillance et sororité | Aurore Monticelli yoga",
+      "description": "Ici, nous cultivons une approche féministe du yoga, ancrée dans la bienveillance, l'inclusivité et la sororité. Que vous soyez attirée par l'énergie dynamique du yoga vinyasa ou par la douceur restauratrice du yin yoga, les séances sont conçues pour répondre à vos besoins."
+    },
+    "cours": {
+      "title": "Les cours | Aurore Monticelli yoga",
+      "description": "les cours de yoga en non mixité choisie, a Lyon dans les pentes de la croix-rousse. Vinyasa et yin yoga, douceur, bienveillance. Bouger, respirer, ressentir, rester"
+    },
+    "infos": {
+      "title": "Informations | Aurore Monticelli yoga",
+      "description": "Informations sur les cours de yoga vinyasa et yin yoga"
+    },
+    "contact": {
+      "title": "Contact | Aurore Monticelli yoga"
+    }
   },
   "nav": {
     "skip": "Aller au contenu",
-    "home": "Aurore Monticelli Yoga — accueil",
+    "home": "Aurore Monticelli yoga — accueil",
     "label": "Navigation principale",
     "open": "Ouvrir le menu",
     "close": "Fermer le menu",
-    "accueil": "Accueil"
+    "accueil": "Accueil",
+    "cours": "Les cours",
+    "infos": "Infos",
+    "contact": "Contact",
+    "reserver": "Réserver un cours"
   },
-  "footer": {
-    "droits": "tous droits réservés"
+  "hero": {
+    "titre": "<span>Bouger.</span> <span>Respirer.</span> <span>Ressentir.</span>",
+    "lieu": "Yoga en non-mixité à Lyon.",
+    "style1": "Vinyasa",
+    "style2": "Yin Yoga",
+    "cta": "Découvrir les cours"
   },
-  "accueil": {
-    "titre": "Aurore Monticelli Yoga",
-    "texte": "Nouveau site en préparation."
+  "images": {
+    "vinyasa": "Posture de yoga Vinyasa en plein air, dans la lumière dorée du soir",
+    "yin": "Posture de Yin Yoga allongée sur un bolster, les yeux fermés, dans l’herbe"
+  },
+  "approche": {
+    "titre": "Du mouvement, de la douceur et une pratique qui s’adapte à chaque corps.",
+    "p1": "Les cours sont proposés en non-mixité choisie, avec l’envie de créer un espace où chaque personne puisse pratiquer à son rythme, exprimer ses limites et ses besoins.",
+    "p2": "Les groupes sont limités à 6 personnes maximum, pour prendre le temps d’écouter et d’adapter la pratique.",
+    "p3": "Ici, pas de recherche de posture parfaite : on adapte le yoga à nos corps, et non l’inverse."
+  },
+  "vinyasa": {
+    "titre": "Les cours de Yoga Vinyasa",
+    "rythme": "Bouger · Respirer · Explorer",
+    "p1": "Une pratique dynamique où les postures s’enchaînent au rythme de la respiration.",
+    "p2": "Le Vinyasa invite à mettre le corps en mouvement, à explorer différentes postures et à porter son attention sur ses sensations. Chaque séance est différente et la pratique s’adapte à votre énergie et à vos besoins du jour.",
+    "p3": "Les postures sont adaptées à chaque personne et à son corps.",
+    "jour1": "Lundi",
+    "heure1": "18h45 — 19h45",
+    "jour2": "Mardi",
+    "heure2": "19h45 — 20h45",
+    "reserver": "Réserver un cours"
+  },
+  "yin": {
+    "titre": "Les cours de Yin Yoga",
+    "rythme": "Rester · Ressentir · Relâcher",
+    "p1": "Une pratique lente et profonde, qui invite à ralentir et à porter son attention sur les sensations du corps.",
+    "p2": "Les postures sont maintenues plusieurs minutes, dans la recherche de votre « endroit juste » : celui où vous pouvez trouver un équilibre entre confort, sensation et relâchement. Les postures sont adaptées à chaque personne et à son corps.",
+    "p3": "La séance peut parfois se prolonger par une méditation guidée, pour terminer tranquillement la pratique.",
+    "jour1": "Mercredi",
+    "heure1": "19h30 — 20h45",
+    "reserver": "Réserver un cours"
+  },
+  "creneaux": {
+    "label": "Horaires"
+  },
+  "performance": {
+    "titre": "Une pratique sans recherche de performance",
+    "p1": "Le yoga peut être un outil pour explorer ses sensations, mieux habiter son corps et apprendre à écouter ce dont on a besoin.",
+    "p2": "Je ne cherche pas à créer un espace parfait, mais un espace où l’on peut écouter, questionner et ajuster nos pratiques.",
+    "p3": "La pratique s’adapte à chaque personne, à son corps et à son énergie du jour."
+  },
+  "aSavoir": {
+    "titre": "À savoir",
+    "texte": "Le yoga est une pratique corporelle et de mieux-être. Il ne remplace pas une psychothérapie ni un accompagnement médical ou thérapeutique. Il peut toutefois s’inscrire en complément d’autres pratiques et accompagnements."
+  },
+  "temoignages": {
+    "titre": "Vos mots doux pour décrire mes cours",
+    "t1": {
+      "texte": "Les cours d’Aurore sont un enchantement. J’en ressors systèmatiquement apaisée et boostée pour la semaine. Aurore a su créer un environnement sécurisant, où chacune - débutante ou non - se sent libre d’avancer à son propre rythme. Sa bienveillance et celle des autres participantes permet de se sentir pleinement en confiance sur son tapis et se reconnecter à ses sensations, sans jugement ni pression. Les exercices sont variés (aucune séance ne ressemble à une autre !), parfaitement guidés, et toujours adaptés à nos besoins du jour. Le meilleur cadeau que l’on puisse offrir à son corps et à son esprit.",
+      "nom": "Clotilde"
+    },
+    "t2": {
+      "texte": "Pour ses cours de yin, Aurore sait créer une bulle de paix, de bienveillance et de douceur. Elle nous invite à respecter notre corps et ses limites, sans jugement ni recherche de performance. Une des meilleurs profs de yoga que je connaisse, vous pouvez y aller les yeux fermés.",
+      "nom": "Manon"
+    },
+    "t3": {
+      "texte": "Les cours d'Aurore sont vraiment un moment cocon, où l'on prend du temps pour soi, dans une ambiance toujours bienveillante. On travaille le corps mais surtout, on peut laisser aller ses émotions, et ça fait beaucoup de bien.<br>Autre point positif, il n'y a pas besoin d'avoir un bon niveau de yoga pour venir, Aurore nous propose des alternatives aux postures en fonction. Une très belle découverte !",
+      "nom": "Raphaëlle"
+    },
+    "t4": {
+      "texte": "Je ne peux que recommander Aurore. Elle travaille dans la plus grande bienveillance et sait nous mettre à l'aise dès le premier instant. Aurore est très douce et patiente, et s'adapte parfaitement à nous. Vous pouvez lui faire confiance les yeux fermés, et vous accordez du temps personnel et qualitatif à ses côtés",
+      "nom": "Clara F."
+    },
+    "t5": {
+      "texte": "La première séance avec Aurore m'avait attiré car je savais que c'était des cours entre femmes, que c'était un choix volontaire pour instaurer une relation de complète confiance, bienveillance.<br>J'ai découvert le yoga au cours de ces séances, et j'ai très vite compris que c'était une pratique essentielle pour se sentir mieux, dans son corps, dans sa tête. J'ai été happée par ces cours en comité intimiste, qui me procurait chaque fois cette sensation de bien être, de confort, de lâcher prise. Depuis presque 2 ans, ils sont devenus mon rituel pour aller mieux. Si j'ai raté un cours hebdomadaire, je sens l'impatience de me retrouver au prochain.<br>Aurore est celle qui m'a permis de vivre cette sensation. C'est grâce à elle que les cours sont devenus importants, essentiels, non pas que pour moi mais pour les autres collègues du yoga, qui pour la plupart deviennent des amies. Cette écoute, cette bienveillance présente à chaque séance, permet d'offrir un moment de douceur qui me fait le plus grand bien. Les cours sont de qualités, adaptés selon les besoins, les ressentis. Depuis 4 ans je suis consciente de ce qui a changé en bien dans ma vie, et le yoga avec Aurore en est l'une des principales causes. Je sais aujourd'hui que le yoga fait désormais partie de ma vie. Et je conseille à tous et toutes de découvrir cette magnifique pratique. Et encore davantage pour celles qui peuvent le faire au côté d'Aurore.",
+      "nom": "Caroline"
+    }
+  },
+  "tarifs": {
+    "titre": "Tarifs 2026-2027",
+    "sousTitre": "Une tarification adaptée à vos revenus",
+    "consigne": "Choisissez la tranche correspondant à votre revenu mensuel net moyen.",
+    "tranche1": "&lt; 1 500 €",
+    "tranche2": "1 500 – 2 500 €",
+    "tranche3": "&gt; 2 500 €",
+    "unite": "À l'unité",
+    "cinq": "5 cours",
+    "dix": "10 cours",
+    "trente": "30 cours",
+    "validite": "Les forfaits sont valables du 1er septembre 2026 au 25 juillet 2027.",
+    "paiement": "Possibilité de paiement en plusieurs fois pour les cartes 10 et 30 cours."
+  },
+  "essai": {
+    "titre": "Cours d'essai",
+    "sousTitre": "Toute l'année, sans engagement.",
+    "reserver": "Réserver mon cours d'essai"
+  },
+  "questions": {
+    "titre": "Quelques infos pour vous aider :",
+    "q1": "Comment choisir mon tarif ?",
+    "r1": "Le tarif se base sur votre revenu mensuel net moyen.<br>Si vos revenus changent d'un mois à l'autre, vous pouvez simplement faire une moyenne sur l'année.",
+    "q2": "Je suis auto-entrepreneure",
+    "r2": "Basez-vous sur ce qu'il vous reste après le paiement de vos cotisations sociales.",
+    "q3": "Je suis intermittente du spectacle",
+    "r3": "Prenez votre revenu net moyen sur l'année plutôt que sur un mois isolé.",
+    "q4": "Besoin d'un justificatif ?",
+    "r4": "Non 🤍 Je vous fais confiance. Choisissez simplement le tarif qui vous semble juste et adapté à votre situation.",
+    "q5": "Un imprévu ?",
+    "r5": "Ça arrive ! Si vous devez annuler, pensez simplement à me prévenir au moins 24h à l'avance.<br>En cas d'annulation plus tardive, la séance reste due."
+  },
+  "contact": {
+    "titre": "Contactez-moi",
+    "nom": "Nom*",
+    "nomExemple": "Ton nom",
+    "prenom": "Prénom",
+    "prenomExemple": "Ton prénom",
+    "email": "Adresse mail*",
+    "emailExemple": "Ton adresse mail",
+    "message": "Message*",
+    "messageExemple": "Laisse ton mot doux ici",
+    "envoyer": "Soumettre",
+    "trouver": "Me trouver :",
+    "adresse": "11 rue Lemot, 69001 Lyon",
+    "accessibilite": "Accessibilité :",
+    "metroLabel": "Metro",
+    "metro": "Croix Paquet (ligne C)",
+    "busLabel": "Bus",
+    "bus": "Colbert (ligne 141)",
+    "parkingLabel": "Parking public",
+    "parking": "1 rue aimé Boussange, Lyon",
+    "infosLabel": "Informations générales",
+    "infos": "Rez-de-chaussée sans ascenseur",
+    "carte": "Plan d’accès — 11 rue Lemot, 69001 Lyon",
+    "apercu": "Aperçu du nouveau site : l’envoi du formulaire sera activé à la mise en ligne."
   },
   "notFound": {
-    "title": "Page introuvable — Aurore Monticelli Yoga",
+    "title": "Page introuvable | Aurore Monticelli yoga",
     "titre": "Page introuvable",
     "texte": "La page demandée n’existe pas ou a été déplacée.",
     "bouton": "Retour à l’accueil"

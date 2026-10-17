@@ -9,13 +9,19 @@
 
 ## Formulaire de contact (sert aussi à réserver)
 
-- [ ] **Test** : envoyer un message depuis le formulaire actuel et vérifier qu'il arrive bien sur `aurore.monticelli@live.fr`, spams compris
-- [ ] Outil d'envoi du nouveau formulaire : Hostinger déconseille la fonction PHP `mail()` et recommande l'envoi SMTP depuis une boîte du domaine. Une boîte gratuite (ex. `site@auroremonticelliyoga.com`) est-elle proposée dans hPanel → E-mails ? Sinon, service de formulaires externe.
+- [x] Le formulaire actuel arrive bien sur la bonne adresse (confirmé le 17/10/2026). C'est le formulaire intégré du Builder : il disparaîtra avec la suppression du site Builder.
+- [x] **Décision (17/10/2026) : tout reste chez Hostinger.** Script PHP sur l'hébergement, envoi SMTP par la boîte gratuite du domaine (à activer au moment de la bascule, par ex. `site@auroremonticelliyoga.com`), réception sur `aurore.monticelli@live.fr`, « Répondre » vers le visiteur. Le formulaire ne pourra être testé qu'en ligne chez Hostinger.
+- [ ] Vérifier dans hPanel → E-mails que l'offre Single inclut bien une boîte gratuite
 - [ ] Ajouter un champ « Cours souhaité » (Vinyasa, Yin, cours d'essai) pour faciliter la réservation ?
+
+## Design
+
+- [ ] **Choix de la cliente** : une ambiance et une organisation (panneau « Propositions de design » de la préversion)
 
 ## Contenu et médias
 
-- [ ] Logo : existe-t-il une version vectorielle ou HD de la fleur violette du favicon ?
+- [ ] Petites coquilles dans les textes validés, laissées telles quelles : à corriger ? Dans les descriptions pour Google, « a Lyon dans les pentes de la croix-rousse » ; sur la page contact, « Metro » et « 1 rue aimé Boussange ». Dans les témoignages, « systèmatiquement », « Une des meilleurs profs », « vous accordez », « m'avait attiré », « me procurait », « de qualités ». Ce sont des citations : à corriger seulement avec l'accord de leurs autrices.
+- [ ] Logo : la nouvelle identité en prévoit un nouveau. Aurore tient-elle à garder la fleur violette du favicon ?
 - [ ] Photos supplémentaires (lieu, ambiance des cours, portrait d'Aurore) ? Seules deux photos sont en ligne, aucune sur l'accueil
 - [ ] Réseaux sociaux (Instagram…) à afficher ?
 - [ ] **Mentions légales** : absentes du site actuel, obligatoires (nom, statut, SIRET, adresse, hébergeur). Politique de confidentialité nécessaire avec le formulaire.

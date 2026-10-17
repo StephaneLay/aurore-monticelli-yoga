@@ -1,0 +1,49 @@
+<section class="section contact" id="contact" data-section>
+  <div class="conteneur contact__grille">
+    <div class="contact__formulaire" data-reveal>
+      <{{p:niveau}} class="contact__titre">{{t:contact.titre}}</{{p:niveau}}>
+      <form class="formulaire" data-formulaire data-apercu="{{t:contact.apercu}}">
+        <div class="formulaire__ligne">
+          <div class="champ">
+            <label for="nom">{{t:contact.nom}}</label>
+            <input id="nom" name="nom" type="text" autocomplete="family-name" placeholder="{{t:contact.nomExemple}}" required>
+          </div>
+          <div class="champ">
+            <label for="prenom">{{t:contact.prenom}}</label>
+            <input id="prenom" name="prenom" type="text" autocomplete="given-name" placeholder="{{t:contact.prenomExemple}}">
+          </div>
+        </div>
+        <div class="champ">
+          <label for="email">{{t:contact.email}}</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="{{t:contact.emailExemple}}" required>
+        </div>
+        <div class="champ">
+          <label for="message">{{t:contact.message}}</label>
+          <textarea id="message" name="message" rows="6" placeholder="{{t:contact.messageExemple}}" required></textarea>
+        </div>
+        <div class="champ champ--piege" aria-hidden="true">
+          <label for="site_web">Site web</label>
+          <input id="site_web" name="site_web" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <button class="bouton" type="submit">{{t:contact.envoyer}}</button>
+        <p class="formulaire__statut" role="status" data-formulaire-statut></p>
+      </form>
+    </div>
+    <div class="contact__infos" data-reveal>
+      <div class="contact__bloc">
+        <h3 class="contact__sous-titre">{{t:contact.trouver}}</h3>
+        <p class="contact__adresse">{{t:contact.adresse}}</p>
+      </div>
+      <div class="contact__bloc">
+        <h3 class="contact__sous-titre">{{t:contact.accessibilite}}</h3>
+        <dl class="acces">
+          <div class="acces__ligne"><dt>{{t:contact.metroLabel}}</dt><dd>{{t:contact.metro}}</dd></div>
+          <div class="acces__ligne"><dt>{{t:contact.busLabel}}</dt><dd>{{t:contact.bus}}</dd></div>
+          <div class="acces__ligne"><dt>{{t:contact.parkingLabel}}</dt><dd>{{t:contact.parking}}</dd></div>
+          <div class="acces__ligne"><dt>{{t:contact.infosLabel}}</dt><dd>{{t:contact.infos}}</dd></div>
+        </dl>
+      </div>
+      <iframe class="contact__carte" title="{{t:contact.carte}}" src="https://www.openstreetmap.org/export/embed.html?bbox=4.8296%2C45.7706%2C4.8386%2C45.7745&amp;layer=mapnik&amp;marker=45.77252%2C4.83406" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>

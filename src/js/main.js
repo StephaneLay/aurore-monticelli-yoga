@@ -64,6 +64,15 @@
     });
   }
 
+  document.querySelectorAll('[data-formulaire]').forEach(function (formulaire) {
+    formulaire.addEventListener('submit', function (evenement) {
+      if (formulaire.getAttribute('action')) return;
+      evenement.preventDefault();
+      var statut = formulaire.querySelector('[data-formulaire-statut]');
+      if (statut) statut.textContent = formulaire.getAttribute('data-apercu');
+    });
+  });
+
   var defilementPrevu = false;
 
   function majDefilement() {

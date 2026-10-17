@@ -6,10 +6,6 @@ const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src');
 const DIST = path.join(ROOT, 'dist');
 
-function readSource(relativePath) {
-  return fs.readFileSync(path.join(SRC, relativePath), 'utf8');
-}
-
 function copyDirectory(source, destination) {
   fs.mkdirSync(destination, { recursive: true });
   for (const entry of fs.readdirSync(source, { withFileTypes: true })) {
@@ -109,16 +105,53 @@ function loadTranslations(languages) {
 
 function assetVersions() {
   const versions = {};
-  for (const file of ['css/style.css', 'js/main.js']) {
-    const content = fs.readFileSync(path.join(SRC, file));
-    versions[file] = crypto.createHash('sha256').update(content).digest('hex').slice(0, 10);
+  for (const directory of ['css', 'js']) {
+    const sourceDirectory = path.join(SRC, directory);
+    if (!fs.existsSync(sourceDirectory)) continue;
+    for (const file of fs.readdirSync(sourceDirectory).filter((name) => /\.(css|js)$/.test(name))) {
+      const content = fs.readFileSync(path.join(sourceDirectory, file));
+      versions[`${directory}/${file}`] = crypto.createHash('sha256').update(content).digest('hex').slice(0, 10);
+    }
   }
   return versions;
 }
 
 function versionAssets(html, versions) {
-  return html.replace(/(["'])((?:\.\.\/)*)(css\/style\.css|js\/main\.js)\1/g,
-    (match, quote, root, file) => `${quote}${root}${file}?v=${versions[file]}${quote}`);
+  return html.replace(/(["'])((?:\.\.\/)*)((?:css|js)\/[\w.-]+\.(?:css|js))\1/g,
+    (match, quote, root, file) => (file in versions ? `${quote}${root}${file}?v=${versions[file]}${quote}` : match));
+}
+
+function listPages(directory, prefix = '') {
+  const pages = [];
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const relative = prefix ? `${prefix}/${entry.name}` : entry.name;
+    if (entry.isDirectory()) pages.push(...listPages(path.join(directory, entry.name), relative));
+    else if (entry.isFile() && entry.name.endsWith('.html')) pages.push(relative);
+  }
+  return pages.sort();
+}
+
+const partialCache = new Map();
+
+function readPartial(partial, name) {
+  if (!partialCache.has(partial)) {
+    const file = path.join(SRC, 'partials', `${partial}.html`);
+    if (!fs.existsSync(file)) throw new Error(`Partial introuvable « ${partial} » (src/partials/${partial}.html) dans src/pages/${name}.`);
+    partialCache.set(partial, fs.readFileSync(file, 'utf8'));
+  }
+  return partialCache.get(partial);
+}
+
+function resolveIncludes(html, name, depth = 0) {
+  if (depth > 10) throw new Error(`Inclusions imbriquées trop profondes dans src/pages/${name}.`);
+  return html.replace(/\{\{INCLUDE:([a-z0-9/_-]+)((?:\s+[a-zA-Z0-9]+="[^"]*")*)\s*\}\}/g, (token, partial, rawParams) => {
+    const params = Object.fromEntries([...rawParams.matchAll(/([a-zA-Z0-9]+)="([^"]*)"/g)].map((match) => [match[1], match[2]]));
+    const content = readPartial(partial, name).replace(/\{\{p:([a-zA-Z0-9]+)\}\}/g, (match, key) => {
+      if (!(key in params)) throw new Error(`Paramètre « ${key} » manquant pour l’inclusion de ${partial} dans src/pages/${name}.`);
+      return params[key];
+    });
+    return resolveIncludes(content, name, depth + 1);
+  });
 }
 
 function outputPath(language, config, name) {
@@ -152,12 +185,10 @@ function formatPrice(prix, language) {
   }).format(prix);
 }
 
-function renderPage(template, { name, language, config, partials, strings }) {
-  const root = language === config.defaultLanguage ? '' : '../';
-  let html = template;
-  for (const [token, partial] of Object.entries(partials)) {
-    html = html.replaceAll(token, () => partial);
-  }
+function renderPage(template, { name, language, config, strings }) {
+  const depth = name.split('/').length - 1;
+  const root = (language === config.defaultLanguage ? '' : '../') + '../'.repeat(depth);
+  let html = resolveIncludes(template, name);
 
   html = html.replace(/\{\{t:([a-zA-Z0-9_.-]+)\}\}/g, (token, key) => {
     if (!(key in strings)) throw new Error(`Traduction manquante « ${key} » (${language}) dans src/pages/${name}.`);
@@ -210,24 +241,18 @@ function build() {
   const pagesDirectory = path.join(SRC, 'pages');
   if (!fs.existsSync(pagesDirectory)) throw new Error('Répertoire src/pages introuvable.');
 
-  const pageNames = fs.readdirSync(pagesDirectory)
-    .filter((name) => name.endsWith('.html'))
-    .sort();
+  const pageNames = listPages(pagesDirectory);
   if (pageNames.length === 0) throw new Error('Aucune page HTML trouvée dans src/pages.');
 
   const config = loadSiteConfig();
   const translations = loadTranslations(config.languages);
-  const partials = {
-    '{{HEADER}}': readSource('partials/header.html'),
-    '{{FOOTER}}': readSource('partials/footer.html'),
-  };
 
   const versions = assetVersions();
   const renderedPages = [];
   for (const name of pageNames) {
     const template = fs.readFileSync(path.join(pagesDirectory, name), 'utf8');
     for (const language of config.languages) {
-      const html = versionAssets(renderPage(template, { name, language, config, partials, strings: translations[language] }), versions);
+      const html = versionAssets(renderPage(template, { name, language, config, strings: translations[language] }), versions);
       renderedPages.push({ name, language, file: outputPath(language, config, name), html });
     }
   }

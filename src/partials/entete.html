@@ -1,0 +1,22 @@
+<a class="skip-link" href="#contenu">{{t:nav.skip}}</a>
+<header class="site-header" data-header>
+  <div class="site-header__inner">
+    <a class="marque" href="{{p:accueil}}" aria-label="{{t:nav.home}}">
+      <span class="marque__nom">{{t:site.nom}}</span>
+      <span class="marque__discipline">{{t:site.discipline}}</span>
+    </a>
+    <button class="site-header__burger" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+      <span class="site-header__burger-barres" aria-hidden="true"></span>
+      <span class="visually-hidden" data-label-open="{{t:nav.open}}" data-label-close="{{t:nav.close}}">{{t:nav.open}}</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="{{t:nav.label}}">
+      <ul class="site-nav__liste">
+        <li><a class="site-nav__lien" href="{{p:accueil}}">{{t:nav.accueil}}</a></li>
+        <li><a class="site-nav__lien" href="{{p:cours}}">{{t:nav.cours}}</a></li>
+        <li><a class="site-nav__lien" href="{{p:infos}}">{{t:nav.infos}}</a></li>
+        <li><a class="site-nav__lien" href="{{p:contact}}">{{t:nav.contact}}</a></li>
+      </ul>
+      <a class="bouton site-nav__cta" href="{{p:contact}}">{{t:nav.reserver}}</a>
+    </nav>
+  </div>
+</header>

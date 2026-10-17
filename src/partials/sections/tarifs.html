@@ -1,0 +1,29 @@
+<section class="section tarifs" id="tarifs" data-section>
+  <div class="conteneur">
+    <div class="tarifs__entete" data-reveal>
+      <h2 class="tarifs__titre">{{t:tarifs.titre}}</h2>
+      <p class="tarifs__sous-titre">{{t:tarifs.sousTitre}}</p>
+    </div>
+    <div class="tarifs__grille" data-reveal>
+      <fieldset class="tranches">
+        <legend class="tranches__consigne">{{t:tarifs.consigne}}</legend>
+        <div class="tranches__options">
+          <label class="tranche"><input type="radio" name="tranche" value="1"><span>{{t:tarifs.tranche1}}</span></label>
+          <label class="tranche"><input type="radio" name="tranche" value="2" checked><span>{{t:tarifs.tranche2}}</span></label>
+          <label class="tranche"><input type="radio" name="tranche" value="3"><span>{{t:tarifs.tranche3}}</span></label>
+        </div>
+      </fieldset>
+      <ul class="formules">
+        <li class="formule"><span class="formule__nom">{{t:tarifs.unite}}</span><span class="formule__prix" data-tranche="1">{{PRIX:unite-1}}</span><span class="formule__prix" data-tranche="2">{{PRIX:unite-2}}</span><span class="formule__prix" data-tranche="3">{{PRIX:unite-3}}</span></li>
+        <li class="formule"><span class="formule__nom">{{t:tarifs.cinq}}</span><span class="formule__prix" data-tranche="1">{{PRIX:cinq-1}}</span><span class="formule__prix" data-tranche="2">{{PRIX:cinq-2}}</span><span class="formule__prix" data-tranche="3">{{PRIX:cinq-3}}</span></li>
+        <li class="formule"><span class="formule__nom">{{t:tarifs.dix}}</span><span class="formule__prix" data-tranche="1">{{PRIX:dix-1}}</span><span class="formule__prix" data-tranche="2">{{PRIX:dix-2}}</span><span class="formule__prix" data-tranche="3">{{PRIX:dix-3}}</span></li>
+        <li class="formule"><span class="formule__nom">{{t:tarifs.trente}}</span><span class="formule__prix" data-tranche="1">{{PRIX:trente-1}}</span><span class="formule__prix" data-tranche="2">{{PRIX:trente-2}}</span><span class="formule__prix" data-tranche="3">{{PRIX:trente-3}}</span></li>
+      </ul>
+    </div>
+    <ul class="tarifs__notes">
+      <li>{{t:tarifs.validite}}</li>
+      <li>{{t:tarifs.paiement}}</li>
+    </ul>
+  </div>
+</section>
+{{INCLUDE:sections/essai contact="{{p:contact}}"}}

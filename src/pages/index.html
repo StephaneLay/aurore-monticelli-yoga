@@ -1,26 +1,23 @@
 <!doctype html>
 <html lang="{{LANG}}">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <title>{{t:meta.title}}</title>
-  <meta name="description" content="{{t:meta.description}}">
-  <meta property="og:title" content="{{t:meta.title}}">
-  <meta property="og:description" content="{{t:meta.description}}">
+  {{INCLUDE:tete}}
+  <title>{{t:meta.accueil.title}}</title>
+  <meta name="description" content="{{t:meta.accueil.description}}">
+  <meta property="og:title" content="{{t:meta.accueil.title}}">
+  <meta property="og:description" content="{{t:meta.accueil.description}}">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="{{t:meta.ogLocale}}">
+  <meta property="og:locale" content="fr_FR">
   {{HEAD_LINKS}}
-  <link rel="stylesheet" href="{{ROOT}}css/style.css">
 </head>
-<body>
-{{HEADER}}
+<body data-organisation="quatre-pages">
+{{INCLUDE:entete accueil="index.html" cours="les-cours.html" infos="infos.html" contact="contact.html"}}
 <main id="contenu">
-  <section class="section conteneur" aria-labelledby="accueil-titre">
-    <h1 id="accueil-titre" data-reveal>{{t:accueil.titre}}</h1>
-    <p data-reveal>{{t:accueil.texte}}</p>
-  </section>
+{{INCLUDE:sections/hero-photo cours="les-cours.html"}}
+{{INCLUDE:sections/defilant}}
+{{INCLUDE:sections/apercu cours="les-cours.html"}}
+{{INCLUDE:sections/essai contact="contact.html"}}
 </main>
-{{FOOTER}}
+{{INCLUDE:pied contact="contact.html"}}
 </body>
 </html>

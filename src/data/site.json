@@ -5,5 +5,19 @@
   "languages": [
     "fr"
   ],
-  "tarifs": {}
+  "tarifs": {
+    "essai": 10,
+    "unite-1": 15,
+    "unite-2": 20,
+    "unite-3": 22,
+    "cinq-1": 70,
+    "cinq-2": 95,
+    "cinq-3": 100,
+    "dix-1": 130,
+    "dix-2": 180,
+    "dix-3": 190,
+    "trente-1": 350,
+    "trente-2": 480,
+    "trente-3": 500
+  }
 }

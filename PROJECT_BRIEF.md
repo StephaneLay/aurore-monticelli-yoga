@@ -53,4 +53,23 @@ Décisions du 17/10/2026 :
 - **Identité : entièrement nouvelle**, plus propre. La palette, les polices et le style actuels ne sont pas à reprendre.
 - Ordre de travail : l'hébergement est réglé avant le design.
 
+### Propositions soumises à la cliente (préversion du 17/10/2026)
+
+Fil conducteur commun : « Aurore » = l'aube. Un motif de soleil levant revient sous des formes différentes, en écho à la lumière dorée des deux photos.
+
+| Ambiance | Couleurs | Polices | Signature |
+|---|---|---|---|
+| **Argile** | crème, terre cuite, olive | Fraunces (titres), Manrope | photo en arche, soleil à anneaux, italiques éditoriales |
+| **Lilas** | lavande, prune, pêche | Bricolage Grotesque | formes organiques, halo d'aurore flou, surlignage pêche |
+| **Sous-bois** | vert forêt (sombre), ambre, parchemin | Instrument Serif, Instrument Sans | photo pleine page, lueur ambrée, élégance éditoriale |
+| **Manifeste** | papier, encre, vermillon, rose | Archivo (capitales élargies) | graphique et engagé : disque vermillon, cadres noirs, ombres décalées |
+
+| Organisation | Pages |
+|---|---|
+| **4 pages** | comme aujourd'hui, mêmes adresses : Accueil (accroche + photo, aperçu des deux cours, cours d'essai), Les cours, Infos, Contact |
+| **3 pages** | Accueil (accroche, approche, cours, témoignages), Infos, Contact |
+| **Page unique** | tout le contenu sur une page, menu par ancres |
+
+Contenu identique dans toutes les combinaisons. Ajouts : un bandeau défilant qui reprend « Bouger · Respirer · Explorer / Rester · Ressentir · Relâcher », une sélection de la tranche de revenu dans les tarifs, une carte OpenStreetMap et un pied de page (adresse, contact).
+
 Ne pas ajouter de vraies clés, mots de passe ou jetons au dépôt.

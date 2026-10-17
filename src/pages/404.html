@@ -1,20 +1,20 @@
 <!doctype html>
 <html lang="{{LANG}}">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{INCLUDE:tete}}
   <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#ffffff">
   <title>{{t:notFound.title}}</title>
-  <link rel="stylesheet" href="{{ROOT}}css/style.css">
 </head>
-<body>
-{{HEADER}}
-<main id="contenu" class="section conteneur egare">
-  <h1>{{t:notFound.titre}}</h1>
-  <p>{{t:notFound.texte}}</p>
-  <a class="bouton" href="index.html">{{t:notFound.bouton}}</a>
+<body data-organisation="quatre-pages">
+{{INCLUDE:entete accueil="index.html" cours="les-cours.html" infos="infos.html" contact="contact.html"}}
+<main id="contenu" class="egare">
+  <div class="soleil" aria-hidden="true"></div>
+  <div class="conteneur egare__inner">
+    <h1 class="egare__titre">{{t:notFound.titre}}</h1>
+    <p>{{t:notFound.texte}}</p>
+    <a class="bouton" href="index.html">{{t:notFound.bouton}}</a>
+  </div>
 </main>
-{{FOOTER}}
+{{INCLUDE:pied contact="contact.html"}}
 </body>
 </html>
