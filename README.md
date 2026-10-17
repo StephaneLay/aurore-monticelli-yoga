@@ -31,7 +31,7 @@ Choix de la cliente le 17/10/2026, parmi 4 ambiances et 3 organisations : ambian
   - `index.html` : accroche, approche, cours (ancre `#cours`), pratique sans performance, témoignages, « À savoir » ;
   - `infos.html` : tarifs, cours d'essai, questions ;
   - `contact.html` : formulaire, accès, Instagram, carte.
-- **Favicon** : une lune pêche sur un disque brun. `src/images/favicon.svg` est la source. `favicon.png` (256 px, transparent) et `apple-touch-icon.png` (180 px, fond crème) en sont des exports PNG : il faut les régénérer si le SVG change.
+- **Favicon** : un croissant de lune blanc sur un disque noir. `src/images/favicon.svg` est la source. `favicon.png` (256 px, transparent autour du disque) et `apple-touch-icon.png` (180 px, fond noir) en sont des exports PNG : il faut les régénérer si le SVG change.
 
 ## Textes, fragments et langues
 
@@ -45,7 +45,7 @@ Choix de la cliente le 17/10/2026, parmi 4 ambiances et 3 organisations : ambian
   - `{{HREF_FR}}`, `{{HREF_EN}}`… : la même page dans une autre langue
   - `{{HEAD_LINKS}}` : canonical, `og:url` et `hreflang`, générés seulement quand `siteUrl` est renseigné
 - Les liens entre pages restent relatifs (`les-cours.html#yin`, `contact.html`). C'est indispensable pour la préversion GitHub Pages, servie dans un sous-dossier.
-- Chaque fichier de `css/` et `js/` reçoit une empreinte (`style.css?v=…`).
+- Chaque fichier de `css/` et `js/`, ainsi que les favicons (`favicon.svg`, `favicon.png`, `apple-touch-icon.png`), reçoit une empreinte (`style.css?v=…`). Une modification change donc l'adresse du fichier, et les navigateurs rechargent la nouvelle version au lieu de garder l'ancienne en cache (les favicons y restent sinon très longtemps).
 
 ## Tarifs
 

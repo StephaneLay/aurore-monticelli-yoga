@@ -105,10 +105,11 @@ function loadTranslations(languages) {
 
 function assetVersions() {
   const versions = {};
-  for (const directory of ['css', 'js']) {
+  const versioned = { css: /\.css$/, js: /\.js$/, images: /^(favicon|apple-touch-icon)\.(svg|png)$/ };
+  for (const [directory, pattern] of Object.entries(versioned)) {
     const sourceDirectory = path.join(SRC, directory);
     if (!fs.existsSync(sourceDirectory)) continue;
-    for (const file of fs.readdirSync(sourceDirectory).filter((name) => /\.(css|js)$/.test(name))) {
+    for (const file of fs.readdirSync(sourceDirectory).filter((name) => pattern.test(name))) {
       const content = fs.readFileSync(path.join(sourceDirectory, file));
       versions[`${directory}/${file}`] = crypto.createHash('sha256').update(content).digest('hex').slice(0, 10);
     }
@@ -117,7 +118,7 @@ function assetVersions() {
 }
 
 function versionAssets(html, versions) {
-  return html.replace(/(["'])((?:\.\.\/)*)((?:css|js)\/[\w.-]+\.(?:css|js))\1/g,
+  return html.replace(/(["'])((?:\.\.\/)*)((?:css|js|images)\/[\w.-]+\.(?:css|js|svg|png))\1/g,
     (match, quote, root, file) => (file in versions ? `${quote}${root}${file}?v=${versions[file]}${quote}` : match));
 }
 
