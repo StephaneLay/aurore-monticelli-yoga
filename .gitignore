@@ -1,0 +1,16 @@
+dist/
+node_modules/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+
+# Sauvegarde et extraction du site actuel (Hostinger), hors git
+legacy/
+
+# Exports de maquette (captures, éléments sources), hors git
+maquette/
+
+# Métadonnées Windows/WSL (fichiers créés lors de copies depuis Windows)
+*Zone.Identifier

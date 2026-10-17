@@ -1,0 +1,31 @@
+{
+  "site": {
+    "nom": "Aurore Monticelli Yoga"
+  },
+  "meta": {
+    "title": "Aurore Monticelli — Yoga",
+    "description": "Site en cours de refonte.",
+    "ogLocale": "fr_FR"
+  },
+  "nav": {
+    "skip": "Aller au contenu",
+    "home": "Aurore Monticelli Yoga — accueil",
+    "label": "Navigation principale",
+    "open": "Ouvrir le menu",
+    "close": "Fermer le menu",
+    "accueil": "Accueil"
+  },
+  "footer": {
+    "droits": "tous droits réservés"
+  },
+  "accueil": {
+    "titre": "Aurore Monticelli Yoga",
+    "texte": "Nouveau site en préparation."
+  },
+  "notFound": {
+    "title": "Page introuvable — Aurore Monticelli Yoga",
+    "titre": "Page introuvable",
+    "texte": "La page demandée n’existe pas ou a été déplacée.",
+    "bouton": "Retour à l’accueil"
+  }
+}
