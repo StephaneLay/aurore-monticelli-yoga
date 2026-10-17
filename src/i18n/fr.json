@@ -105,7 +105,12 @@
     "t5": {
       "texte": "La première séance avec Aurore m’avait attirée car je savais que c’étaient des cours entre femmes, que c’était un choix volontaire pour instaurer une relation de complète confiance, bienveillance.<br>J’ai découvert le yoga au cours de ces séances, et j’ai très vite compris que c’était une pratique essentielle pour se sentir mieux, dans son corps, dans sa tête. J’ai été happée par ces cours en comité intimiste, qui me procuraient chaque fois cette sensation de bien-être, de confort, de lâcher-prise. Depuis presque 2 ans, ils sont devenus mon rituel pour aller mieux. Si j’ai raté un cours hebdomadaire, je sens l’impatience de me retrouver au prochain.<br>Aurore est celle qui m’a permis de vivre cette sensation. C’est grâce à elle que les cours sont devenus importants, essentiels, non pas que pour moi mais pour les autres collègues du yoga, qui pour la plupart deviennent des amies. Cette écoute, cette bienveillance présente à chaque séance, permet d’offrir un moment de douceur qui me fait le plus grand bien. Les cours sont de qualité, adaptés selon les besoins, les ressentis. Depuis 4 ans, je suis consciente de ce qui a changé en bien dans ma vie, et le yoga avec Aurore en est l’une des principales causes. Je sais aujourd’hui que le yoga fait désormais partie de ma vie. Et je conseille à tous et toutes de découvrir cette magnifique pratique. Et encore davantage pour celles qui peuvent le faire au côté d’Aurore.",
       "nom": "Caroline"
-    }
+    },
+    "liste": "Avis des participantes",
+    "precedent": "Avis précédents",
+    "suivant": "Avis suivants",
+    "suite": "Lire la suite",
+    "reduire": "Réduire"
   },
   "tarifs": {
     "titre": "Tarifs 2026-2027",
@@ -162,12 +167,18 @@
     "infosLabel": "Informations générales",
     "infos": "Rez-de-chaussée sans ascenseur",
     "carte": "Plan d’accès — 11 rue Lemot, 69001 Lyon",
-    "apercu": "Aperçu du nouveau site : l’envoi du formulaire sera activé à la mise en ligne."
+    "apercu": "Aperçu du nouveau site : l’envoi du formulaire sera activé à la mise en ligne.",
+    "suivre": "Me suivre :"
   },
   "notFound": {
     "title": "Page introuvable | Aurore Monticelli yoga",
     "titre": "Page introuvable",
     "texte": "La page demandée n’existe pas ou a été déplacée.",
     "bouton": "Retour à l’accueil"
+  },
+  "instagram": {
+    "url": "https://www.instagram.com/aurore.monticelli.yoga",
+    "compte": "@aurore.monticelli.yoga",
+    "lien": "Instagram d’Aurore Monticelli yoga (nouvel onglet)"
   }
 }

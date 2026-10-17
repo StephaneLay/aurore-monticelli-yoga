@@ -1,7 +1,7 @@
-<section class="section contact" id="contact" data-section>
+<section class="section contact" id="contact">
   <div class="conteneur contact__grille">
     <div class="contact__formulaire" data-reveal>
-      <{{p:niveau}} class="contact__titre">{{t:contact.titre}}</{{p:niveau}}>
+      <h1 class="contact__titre">{{t:contact.titre}}</h1>
       <form class="formulaire" data-formulaire data-apercu="{{t:contact.apercu}}">
         <div class="formulaire__ligne">
           <div class="champ">
@@ -42,6 +42,13 @@
           <div class="acces__ligne"><dt>{{t:contact.parkingLabel}}</dt><dd>{{t:contact.parking}}</dd></div>
           <div class="acces__ligne"><dt>{{t:contact.infosLabel}}</dt><dd>{{t:contact.infos}}</dd></div>
         </dl>
+      </div>
+      <div class="contact__bloc">
+        <h3 class="contact__sous-titre">{{t:contact.suivre}}</h3>
+        <a class="contact__reseau" href="{{t:instagram.url}}" target="_blank" rel="noopener" aria-label="{{t:instagram.lien}}">
+          {{INCLUDE:icones/instagram}}
+          <span aria-hidden="true">{{t:instagram.compte}}</span>
+        </a>
       </div>
       <iframe class="contact__carte" title="{{t:contact.carte}}" src="https://www.openstreetmap.org/export/embed.html?bbox=4.8296%2C45.7706%2C4.8386%2C45.7745&amp;layer=mapnik&amp;marker=45.77252%2C4.83406" loading="lazy"></iframe>
     </div>

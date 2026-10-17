@@ -64,6 +64,56 @@
     });
   }
 
+  var piste = document.querySelector('[data-defileur]');
+  var precedent = document.querySelector('[data-defileur-precedent]');
+  var suivant = document.querySelector('[data-defileur-suivant]');
+
+  if (piste && precedent && suivant) {
+    var pas = function () {
+      var carte = piste.querySelector('[data-temoignage]');
+      var ecart = parseFloat(window.getComputedStyle(piste).columnGap) || 0;
+      return carte ? carte.getBoundingClientRect().width + ecart : piste.clientWidth;
+    };
+
+    var defiler = function (sens) {
+      piste.scrollBy({ left: sens * pas(), behavior: reduireAnimations ? 'auto' : 'smooth' });
+    };
+
+    var majCommandes = function () {
+      precedent.disabled = piste.scrollLeft <= 2;
+      suivant.disabled = piste.scrollLeft >= piste.scrollWidth - piste.clientWidth - 2;
+    };
+
+    precedent.addEventListener('click', function () { defiler(-1); });
+    suivant.addEventListener('click', function () { defiler(1); });
+    piste.addEventListener('scroll', majCommandes, { passive: true });
+    window.addEventListener('resize', majCommandes);
+    majCommandes();
+  }
+
+  document.querySelectorAll('[data-temoignage]').forEach(function (temoignage) {
+    var texte = temoignage.querySelector('[data-temoignage-texte]');
+    var bouton = temoignage.querySelector('[data-temoignage-suite]');
+    if (!texte || !bouton) return;
+
+    var verifier = function () {
+      if (temoignage.classList.contains('est-deplie')) return;
+      bouton.hidden = texte.scrollHeight <= texte.clientHeight + 1;
+    };
+
+    bouton.addEventListener('click', function () {
+      var deplie = !temoignage.classList.contains('est-deplie');
+      temoignage.classList.toggle('est-deplie', deplie);
+      bouton.setAttribute('aria-expanded', deplie ? 'true' : 'false');
+      bouton.textContent = bouton.getAttribute(deplie ? 'data-libelle-fermer' : 'data-libelle-ouvrir');
+      if (!deplie && piste) temoignage.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    });
+
+    verifier();
+    window.addEventListener('resize', verifier);
+    if (document.fonts) document.fonts.ready.then(verifier);
+  });
+
   document.querySelectorAll('[data-formulaire]').forEach(function (formulaire) {
     formulaire.addEventListener('submit', function (evenement) {
       if (formulaire.getAttribute('action')) return;

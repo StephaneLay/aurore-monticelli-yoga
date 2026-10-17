@@ -5,9 +5,16 @@
       <span class="marque__discipline">{{t:site.discipline}}</span>
     </p>
     <p class="site-footer__adresse">{{t:contact.adresse}}<br>{{t:contact.metroLabel}} {{t:contact.metro}}</p>
-    <a class="site-footer__lien" href="{{p:contact}}">{{t:contact.titre}}</a>
+    <ul class="site-footer__liens">
+      <li><a class="site-footer__lien" href="contact.html">{{t:contact.titre}}</a></li>
+      <li>
+        <a class="site-footer__lien site-footer__lien--reseau" href="{{t:instagram.url}}" target="_blank" rel="noopener" aria-label="{{t:instagram.lien}}">
+          {{INCLUDE:icones/instagram}}
+          <span aria-hidden="true">{{t:instagram.compte}}</span>
+        </a>
+      </li>
+    </ul>
     <p class="site-footer__droits">© <span data-annee>2026</span> {{t:site.nom}} {{t:site.discipline}}</p>
   </div>
 </footer>
 <script src="{{ROOT}}js/main.js" defer></script>
-<script src="{{ROOT}}js/propositions.js" defer></script>

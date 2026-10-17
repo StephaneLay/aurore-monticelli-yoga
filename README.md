@@ -20,18 +20,18 @@ Prérequis : Node.js 18 ou plus récent, aucune dépendance npm. Le serveur n'a 
 3. Vérifier en local avec `python3 -m http.server --directory dist` (ou `npx serve dist`) : les polices ne se chargent pas toujours si on ouvre le fichier directement
 4. `git add -A && git commit`, le push sur `main` déploie la préversion GitHub Pages (non indexée)
 
-## Propositions de design (préversion)
+## Design retenu
 
-En attendant le choix de la cliente, la préversion contient **4 ambiances × 3 organisations**. Un panneau « Propositions de design » (en bas à droite, créé par `src/js/propositions.js`) permet de passer de l'une à l'autre. Le lien « Copier le lien de cette combinaison » partage une combinaison précise.
+Choix de la cliente le 17/10/2026, parmi 4 ambiances et 3 organisations : ambiance **Argile** et organisation en **3 pages**.
 
-- **Ambiances** (couleurs, polices, formes), toutes dans `src/css/style.css` : `:root` = Argile (Fraunces & Manrope), `[data-ambiance='lilas']` (Bricolage Grotesque), `[data-ambiance='sous-bois']` (Instrument Serif & Instrument Sans, version sombre), `[data-ambiance='clairiere']` (mêmes polices et même mise en page que Sous-bois, vert menthe `#87E990` dominant ; les règles communes aux deux sont écrites `:is([data-ambiance='sous-bois'], [data-ambiance='clairiere'])`). L'ambiance est mémorisée dans le navigateur et transmise par `?ambiance=…`.
-- **Organisations** : `src/pages/` (4 pages, comme le site actuel, mêmes adresses), `src/pages/trois-pages/` (les cours sur l'accueil), `src/pages/page-unique/`. En changeant d'organisation, le panneau conduit à la même section dans l'autre version.
-
-**Une fois le choix fait** :
-
-1. Supprimer `src/js/propositions.js`, `src/css/propositions.css`, leurs deux balises (`partials/tete.html` et `partials/pied.html`) et le petit script `data-ambiance` de `partials/tete.html`
-2. Placer les variables de l'ambiance retenue dans `:root`, supprimer les autres blocs `[data-ambiance=…]` et les polices inutilisées de `src/fonts/`
-3. Garder les pages de l'organisation retenue à la racine de `src/pages/` et supprimer les autres dossiers et fragments inutilisés. Si l'organisation retenue n'est pas « 4 pages », prévoir les redirections 301 des anciennes adresses (`/les-cours`, `/infos`) dans `src/racine/.htaccess`.
+- **Couleurs** : crème `#f6efe6`, terre cuite `#b5532b`, brun `#3d2b20`, pêche `#f0a77a`. Toutes sont des variables de `:root` dans `src/css/style.css`.
+- **Polices** : Fraunces pour les titres (italique sur le mot « Respirer »), Manrope pour le texte.
+- **Motif** : un soleil levant à anneaux (élément `.soleil`), en écho au prénom Aurore.
+- **Pages** :
+  - `index.html` : accroche, approche, cours (ancre `#cours`), pratique sans performance, témoignages, « À savoir » ;
+  - `infos.html` : tarifs, cours d'essai, questions ;
+  - `contact.html` : formulaire, accès, Instagram, carte.
+- **Favicon** : une lune pêche sur un disque brun. `src/images/favicon.svg` est la source. `favicon.png` (256 px, transparent) et `apple-touch-icon.png` (180 px, fond crème) en sont des exports PNG : il faut les régénérer si le SVG change.
 
 ## Textes, fragments et langues
 
@@ -53,11 +53,11 @@ Les prix se modifient à **un seul endroit** : `tarifs` dans `src/data/site.json
 
 ## Structure
 
-- `src/pages/` : pages (voir « Propositions de design »)
-- `src/partials/` : `tete.html` (en-tête HTML commun), `entete.html` (navigation, paramètres `accueil`, `cours`, `infos`, `contact`), `pied.html`, `bandeau-page.html` et `sections/` (un fragment par bloc de contenu : accueil avec ou sans photo, approche, cours, tarifs, témoignages, contact…)
+- `src/pages/` : `index.html`, `infos.html`, `contact.html`, `404.html`
+- `src/partials/` : `tete.html` (en-tête HTML commun : favicons, polices préchargées, CSS), `entete.html` (navigation), `pied.html`, `bandeau-page.html` (titre de page, paramètre `titre`), `icones/instagram.html` et `sections/` (un fragment par bloc de contenu : accueil, approche, cours, tarifs, cours d'essai, témoignages, questions, contact…)
 - `src/i18n/fr.json` : textes
 - `src/css/style.css`, `src/js/main.js` : style et comportements, sans dépendance
-- `src/images/` : photos en WebP (800, 1400 et 2200 px, redimensionnées depuis les originaux du site actuel), image de partage `partage.jpg` (1200 × 630), favicon
+- `src/images/` : photos en WebP (800, 1400 et 2200 px, redimensionnées depuis les originaux du site actuel), image de partage `partage.jpg` (1200 × 630), favicons
 - `src/fonts/` : polices auto-hébergées en woff2 variable, jeu latin (pas d'appel à Google Fonts, pour le RGPD et la vitesse)
 - `src/data/site.json` : nom, URL publique, langues, tarifs
 - `src/racine/` : fichiers copiés à la racine (`.htaccess`…)
@@ -69,7 +69,9 @@ Les prix se modifient à **un seul endroit** : `tarifs` dans `src/data/site.json
 - **Menu mobile** : burger sous 900 px, fermeture par Échap, par un clic sur un lien ou en repassant en grand écran
 - **Lien actif** : `aria-current="page"` posé automatiquement sur le lien de la page courante
 - **En-tête** : collé en haut, filet sous l'en-tête dès 40 px de défilement
-- **Apparition au défilement** : ajouter `data-reveal` à un bloc. Les blocs frères apparaissent en décalé. Rien ne s'anime si le visiteur a demandé à réduire les animations (le bandeau défilant s'arrête aussi).
+- **Apparition au défilement** : ajouter `data-reveal` à un bloc. Les blocs frères apparaissent en décalé. Rien ne s'anime si le visiteur a demandé à réduire les animations.
+- **Témoignages** : cartes côte à côte qui défilent de gauche à droite (glisser au doigt, pavé tactile, flèches du clavier une fois la zone sélectionnée, ou boutons ← →, qui se désactivent en début et en fin de liste). Les textes de plus de 9 lignes sont repliés, avec un bouton « Lire la suite » / « Réduire ». Ajouter un avis : une paire `tN.texte` / `tN.nom` dans `fr.json` et un bloc `<figure>` dans `sections/temoignages.html`.
+- **Instagram** : lien dans l'en-tête (icône, compte affiché dans le menu mobile), le pied de page et la page Contact. L'adresse est à un seul endroit : `instagram.url` dans `fr.json`.
 - **Tarifs** : le choix de la tranche de revenu affiche les prix correspondants, en CSS seul (boutons radio et `:has()`)
 - **Formulaire de contact** : validation du navigateur, champ anti-spam invisible (`site_web`). Tant que la balise `<form>` n'a pas d'attribut `action`, l'envoi affiche un message d'aperçu.
 - **Carte** : OpenStreetMap intégrée (aucun cookie de suivi)
@@ -79,7 +81,7 @@ Les prix se modifient à **un seul endroit** : `tarifs` dans `src/data/site.json
 
 - **Préversion** : le workflow `.github/workflows/deploy-pages.yml` construit le site à chaque push sur `main` et le publie sur GitHub Pages (`https://stephanelay.github.io/aurore-monticelli-yoga/`), avec un `robots.txt` qui interdit l'indexation. Si le premier déploiement échoue sur l'étape `configure-pages`, activer Pages à la main : *Settings → Pages → Source : GitHub Actions*.
 - **Hébergement définitif** : offre Hostinger *Single Web Hosting* du client (un seul site, PHP, gestionnaire de fichiers, FTP), sur le domaine `auroremonticelliyoga.com`. Avant la mise en ligne, renseigner `siteUrl` dans `src/data/site.json`. Cela active canonical, `og:url` et `sitemap.xml`. On publie ensuite **le contenu de `dist/`** dans `public_html`.
-- `.htaccess` (Apache/LiteSpeed) : page 404, en-têtes de sécurité, redirection HTTPS. Les adresses actuelles (`/les-cours`, `/infos`, `/contact`) doivent continuer à fonctionner, pour conserver le référencement.
+- `.htaccess` (Apache/LiteSpeed) : page 404, en-têtes de sécurité, redirection HTTPS. Pour conserver le référencement, les adresses du site actuel continuent de fonctionner : `/infos` et `/contact` servent `infos.html` et `contact.html`, et l'ancienne page `/les-cours` redirige (301) vers `/#cours`. Ces règles ne s'appliquent pas sur GitHub Pages : elles seront à tester après la bascule.
 
 ### Bascule depuis le site Builder (à faire ensemble, jamais en autonomie)
 

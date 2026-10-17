@@ -1,7 +1,7 @@
 <a class="skip-link" href="#contenu">{{t:nav.skip}}</a>
 <header class="site-header" data-header>
   <div class="site-header__inner">
-    <a class="marque" href="{{p:accueil}}" aria-label="{{t:nav.home}}">
+    <a class="marque" href="index.html" aria-label="{{t:nav.home}}">
       <span class="marque__nom">{{t:site.nom}}</span>
       <span class="marque__discipline">{{t:site.discipline}}</span>
     </a>
@@ -11,12 +11,16 @@
     </button>
     <nav class="site-nav" id="site-nav" aria-label="{{t:nav.label}}">
       <ul class="site-nav__liste">
-        <li><a class="site-nav__lien" href="{{p:accueil}}">{{t:nav.accueil}}</a></li>
-        <li><a class="site-nav__lien" href="{{p:cours}}">{{t:nav.cours}}</a></li>
-        <li><a class="site-nav__lien" href="{{p:infos}}">{{t:nav.infos}}</a></li>
-        <li><a class="site-nav__lien" href="{{p:contact}}">{{t:nav.contact}}</a></li>
+        <li><a class="site-nav__lien" href="index.html">{{t:nav.accueil}}</a></li>
+        <li><a class="site-nav__lien" href="index.html#cours">{{t:nav.cours}}</a></li>
+        <li><a class="site-nav__lien" href="infos.html">{{t:nav.infos}}</a></li>
+        <li><a class="site-nav__lien" href="contact.html">{{t:nav.contact}}</a></li>
       </ul>
-      <a class="bouton site-nav__cta" href="{{p:contact}}">{{t:nav.reserver}}</a>
+      <a class="site-nav__reseau" href="{{t:instagram.url}}" target="_blank" rel="noopener" aria-label="{{t:instagram.lien}}">
+        {{INCLUDE:icones/instagram}}
+        <span class="site-nav__reseau-texte" aria-hidden="true">{{t:instagram.compte}}</span>
+      </a>
+      <a class="bouton site-nav__cta" href="contact.html">{{t:nav.reserver}}</a>
     </nav>
   </div>
 </header>

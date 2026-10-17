@@ -1,27 +1,36 @@
-<section class="section temoignages" id="temoignages" data-section>
-  <div class="conteneur">
-    <h2 class="temoignages__titre" data-reveal>{{t:temoignages.titre}}</h2>
-    <div class="temoignages__liste">
-      <figure class="temoignage">
-        <blockquote><p>{{t:temoignages.t1.texte}}</p></blockquote>
-        <figcaption>{{t:temoignages.t1.nom}}</figcaption>
-      </figure>
-      <figure class="temoignage">
-        <blockquote><p>{{t:temoignages.t2.texte}}</p></blockquote>
-        <figcaption>{{t:temoignages.t2.nom}}</figcaption>
-      </figure>
-      <figure class="temoignage">
-        <blockquote><p>{{t:temoignages.t3.texte}}</p></blockquote>
-        <figcaption>{{t:temoignages.t3.nom}}</figcaption>
-      </figure>
-      <figure class="temoignage">
-        <blockquote><p>{{t:temoignages.t4.texte}}</p></blockquote>
-        <figcaption>{{t:temoignages.t4.nom}}</figcaption>
-      </figure>
-      <figure class="temoignage">
-        <blockquote><p>{{t:temoignages.t5.texte}}</p></blockquote>
-        <figcaption>{{t:temoignages.t5.nom}}</figcaption>
-      </figure>
+<section class="section temoignages" id="temoignages" aria-labelledby="temoignages-titre">
+  <div class="conteneur temoignages__entete">
+    <h2 class="temoignages__titre" id="temoignages-titre" data-reveal>{{t:temoignages.titre}}</h2>
+    <div class="defileur__commandes">
+      <button class="defileur__bouton" type="button" data-defileur-precedent aria-controls="temoignages-liste" aria-label="{{t:temoignages.precedent}}"><span aria-hidden="true">←</span></button>
+      <button class="defileur__bouton" type="button" data-defileur-suivant aria-controls="temoignages-liste" aria-label="{{t:temoignages.suivant}}"><span aria-hidden="true">→</span></button>
     </div>
+  </div>
+  <div class="temoignages__piste" id="temoignages-liste" role="region" aria-label="{{t:temoignages.liste}}" tabindex="0" data-defileur>
+    <figure class="temoignage" data-temoignage>
+      <blockquote class="temoignage__citation"><p class="temoignage__texte" id="temoignage-1" data-temoignage-texte>{{t:temoignages.t1.texte}}</p></blockquote>
+      <button class="temoignage__suite" type="button" aria-expanded="false" aria-controls="temoignage-1" data-temoignage-suite data-libelle-ouvrir="{{t:temoignages.suite}}" data-libelle-fermer="{{t:temoignages.reduire}}" hidden>{{t:temoignages.suite}}</button>
+      <figcaption class="temoignage__nom">{{t:temoignages.t1.nom}}</figcaption>
+    </figure>
+    <figure class="temoignage" data-temoignage>
+      <blockquote class="temoignage__citation"><p class="temoignage__texte" id="temoignage-2" data-temoignage-texte>{{t:temoignages.t2.texte}}</p></blockquote>
+      <button class="temoignage__suite" type="button" aria-expanded="false" aria-controls="temoignage-2" data-temoignage-suite data-libelle-ouvrir="{{t:temoignages.suite}}" data-libelle-fermer="{{t:temoignages.reduire}}" hidden>{{t:temoignages.suite}}</button>
+      <figcaption class="temoignage__nom">{{t:temoignages.t2.nom}}</figcaption>
+    </figure>
+    <figure class="temoignage" data-temoignage>
+      <blockquote class="temoignage__citation"><p class="temoignage__texte" id="temoignage-3" data-temoignage-texte>{{t:temoignages.t3.texte}}</p></blockquote>
+      <button class="temoignage__suite" type="button" aria-expanded="false" aria-controls="temoignage-3" data-temoignage-suite data-libelle-ouvrir="{{t:temoignages.suite}}" data-libelle-fermer="{{t:temoignages.reduire}}" hidden>{{t:temoignages.suite}}</button>
+      <figcaption class="temoignage__nom">{{t:temoignages.t3.nom}}</figcaption>
+    </figure>
+    <figure class="temoignage" data-temoignage>
+      <blockquote class="temoignage__citation"><p class="temoignage__texte" id="temoignage-4" data-temoignage-texte>{{t:temoignages.t4.texte}}</p></blockquote>
+      <button class="temoignage__suite" type="button" aria-expanded="false" aria-controls="temoignage-4" data-temoignage-suite data-libelle-ouvrir="{{t:temoignages.suite}}" data-libelle-fermer="{{t:temoignages.reduire}}" hidden>{{t:temoignages.suite}}</button>
+      <figcaption class="temoignage__nom">{{t:temoignages.t4.nom}}</figcaption>
+    </figure>
+    <figure class="temoignage" data-temoignage>
+      <blockquote class="temoignage__citation"><p class="temoignage__texte" id="temoignage-5" data-temoignage-texte>{{t:temoignages.t5.texte}}</p></blockquote>
+      <button class="temoignage__suite" type="button" aria-expanded="false" aria-controls="temoignage-5" data-temoignage-suite data-libelle-ouvrir="{{t:temoignages.suite}}" data-libelle-fermer="{{t:temoignages.reduire}}" hidden>{{t:temoignages.suite}}</button>
+      <figcaption class="temoignage__nom">{{t:temoignages.t5.nom}}</figcaption>
+    </figure>
   </div>
 </section>

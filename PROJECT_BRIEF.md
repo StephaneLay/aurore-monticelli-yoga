@@ -53,23 +53,22 @@ Décisions du 17/10/2026 :
 - **Identité : entièrement nouvelle**, plus propre. La palette, les polices et le style actuels ne sont pas à reprendre.
 - Ordre de travail : l'hébergement est réglé avant le design.
 
-### Propositions soumises à la cliente (préversion du 17/10/2026)
+### Choix final (17/10/2026)
 
-Fil conducteur commun : « Aurore » = l'aube. Un motif de soleil levant revient sous des formes différentes, en écho à la lumière dorée des deux photos.
+La cliente a vu 4 ambiances (Argile, Lilas, Sous-bois, Clairière ; Manifeste avait été écartée d'avance) et 3 organisations (4 pages, 3 pages, page unique). Elle a retenu **Argile en 3 pages**, avec ces retouches :
 
-| Ambiance | Couleurs | Polices | Signature |
-|---|---|---|---|
-| **Argile** | crème, terre cuite, olive | Fraunces (titres), Manrope | photo en arche, soleil à anneaux, italiques éditoriales |
-| **Lilas** | lavande, prune, pêche | Bricolage Grotesque | formes organiques, halo d'aurore flou, surlignage pêche |
-| **Sous-bois** | vert forêt (sombre), ambre, parchemin | Instrument Serif, Instrument Sans | photo pleine page, lueur ambrée, élégance éditoriale |
-| **Clairière** | vert très sombre, menthe `#87E990` dominante | Instrument Serif, Instrument Sans | variante de Sous-bois demandée le 17/10/2026 à la place de Manifeste (que la cliente n'aurait pas aimé) : bandeau défilant et témoignages sur fond menthe, lueur menthe, coins plus arrondis |
+- favicon : une petite lune bien visible (croissant pêche sur disque brun) ;
+- plus de bandeau défilant ;
+- témoignages côte à côte, qu'on fait défiler de gauche à droite ;
+- lien vers Instagram : https://www.instagram.com/aurore.monticelli.yoga
 
-| Organisation | Pages |
-|---|---|
-| **4 pages** | comme aujourd'hui, mêmes adresses : Accueil (accroche + photo, aperçu des deux cours, cours d'essai), Les cours, Infos, Contact |
-| **3 pages** | Accueil (accroche, approche, cours, témoignages), Infos, Contact |
-| **Page unique** | tout le contenu sur une page, menu par ancres |
+Argile : crème, terre cuite et brun, Fraunces et Manrope. Le motif de soleil levant fait écho au prénom Aurore.
 
-Contenu identique dans toutes les combinaisons. Ajouts : un bandeau défilant qui reprend « Bouger · Respirer · Explorer / Rester · Ressentir · Relâcher », une sélection de la tranche de revenu dans les tarifs, une carte OpenStreetMap et un pied de page (adresse, contact).
+Pages :
+- **Accueil** : accroche, approche, les deux cours, pratique sans performance, témoignages, « À savoir » ;
+- **Infos** : tarifs avec sélection de la tranche de revenu, cours d'essai, questions ;
+- **Contact** : formulaire, accès, Instagram, carte OpenStreetMap.
+
+L'ancienne adresse `/les-cours` redirige vers la section des cours de l'accueil.
 
 Ne pas ajouter de vraies clés, mots de passe ou jetons au dépôt.

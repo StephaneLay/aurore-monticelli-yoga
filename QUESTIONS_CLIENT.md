@@ -16,13 +16,13 @@
 
 ## Design
 
-- [ ] **Choix de la cliente** : une ambiance et une organisation (panneau « Propositions de design » de la préversion)
+- [x] **Choix de la cliente** (17/10/2026) : Argile en 3 pages, favicon lune, sans bandeau défilant, témoignages en carrousel
 
 ## Contenu et médias
 
 - [x] Coquilles corrigées le 17/10/2026, avec l'accord de Stéphane, y compris dans les témoignages (orthographe et accords seulement, sans réécriture) : « systématiquement », « permettent », « et de se reconnecter », « meilleures profs », « vous accorder », « attirée », « c'étaient », « me procuraient », « bien-être », « lâcher-prise », « de qualité ». Ailleurs : « Métro », « Croix-Paquet », « rue Aimé Boussange », la description Google de la page Les cours, et les apostrophes typographiques. À signaler aux autrices des témoignages si besoin.
-- [ ] Logo : la nouvelle identité en prévoit un nouveau. Aurore tient-elle à garder la fleur violette du favicon ?
+- [x] Favicon : une petite lune (17/10/2026), à la place de la fleur violette
 - [ ] Photos supplémentaires (lieu, ambiance des cours, portrait d'Aurore) ? Seules deux photos sont en ligne, aucune sur l'accueil
-- [ ] Réseaux sociaux (Instagram…) à afficher ?
+- [x] Instagram : https://www.instagram.com/aurore.monticelli.yoga (en-tête, pied de page, page Contact). D'autres réseaux ?
 - [ ] **Mentions légales** : absentes du site actuel, obligatoires (nom, statut, SIRET, adresse, hébergeur). Politique de confidentialité nécessaire avec le formulaire.
 - [ ] Langue : français seul ?
